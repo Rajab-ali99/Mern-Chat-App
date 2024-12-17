@@ -4,7 +4,7 @@ const messageSchema = new mongoose.Schema({
         type: String,
         default:''
     },
-    imageUrl:{
+    ImageUrl:{
         type: String,
         default:''
     },
@@ -35,10 +35,12 @@ const conversationSchema = new mongoose.Schema({
         required: true,
         ref : 'User'
     },
-    messages:{
-        type: mongoose.Schema.ObjectId,
-        ref : 'Message'
-    },
+    messages:[
+        {
+         type: mongoose.Schema.ObjectId,
+         ref : 'Message'
+        }
+    ],
 },{
     timestamps:true
 })
