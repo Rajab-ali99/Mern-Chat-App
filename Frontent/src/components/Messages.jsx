@@ -35,7 +35,8 @@ const Messages = () => {
   const [messages, setMessages] = useState({
     text: "",
     ImageUrl: "",
-    videoUrl: ""
+    videoUrl: "",
+   
   })
   const params = useParams()
   const user = useSelector(state => state?.user)
@@ -114,11 +115,10 @@ const Messages = () => {
     })
   }
   const EmojiClick = (event, emojiObject) => {
-    const { name, value } = event.target
     setMessages((preve) =>{
        return {
       ...preve,
-      [name]: value + emojiObject.emoji
+      text :(preveinp) =>   preveinp + emojiObject.emoji
     }
   });
     setopenEmoji(!openEmoji);
@@ -259,16 +259,15 @@ const Messages = () => {
           }
           <div className={openEmoji ? 'block' : 'hidden'}>
             <Picker
-            reactionsDefaultOpen={true}
-             data={data} 
              onEmojiClick={EmojiClick}
+            
              />
           </div>
         </section>
         <section className='bg-white h-14 border  gap-3 flex items-center'>
           <div className='flex'>
 
-          <button className='flex items-center hover:bg-slate-200 rounded justify-center p-3 ' onClick={()=>setopenEmoji(!openEmoji)}>
+          <button className='flex items-center hover:bg-slate-200 rounded justify-center p-3 ' >
             <GrEmoji size={22} />
           </button>
           <button onClick={handleOpenImageVideo} className=' hover:bg-slate-200 flex items-center justify-center p-3 rounded'>
@@ -280,7 +279,7 @@ const Messages = () => {
               type="text"
               name='text'
               placeholder='Type a message'
-              value={messages?.text}
+              value={messages?.text }
               onChange={handleChange}
               className='outline-none h-full w-full '
             />
