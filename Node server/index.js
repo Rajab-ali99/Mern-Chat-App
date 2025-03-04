@@ -11,10 +11,6 @@ app.use(cookieParser())
 app.use(cors({
      origin: process.env.FRONTEND_URL ,
      credentials: true,
-     "allowedHeaders": ["sessionId", "Content-Type"],
-    "exposedHeaders": ["sessionId"],
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": false
 }))
 app.use(express.json())
 app.get('/',(request,response)=>{
