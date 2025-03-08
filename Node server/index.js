@@ -11,6 +11,7 @@ app.use(cookieParser())
 app.use(cors({
      origin: process.env.FRONTEND_URL ,
      credentials: true,
+     Access-Control-Allow-Origin:https://mern-chat-app-backend-gilt.vercel.app
 }))
 app.use(express.json())
 app.get('/',(request,response)=>{
