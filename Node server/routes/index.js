@@ -1,4 +1,5 @@
-const express= require('express')
+const app= require('../index')
+const serverless = require('serverless-http');
 const userRegister = require('../controller/userRegister')
 const checkEmail = require('../controller/checkEmail')
 const checkPassword = require('../controller/checkPassword')
@@ -21,4 +22,4 @@ router.get('/logout',logout)
 router.post('/update-user',updateUserDetails)
 // search User 
 router.post('/search-user',searchUser)
-module.exports= router
+module.exports= serverless(app);

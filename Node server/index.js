@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8080
 app.use(cookieParser())
 app.use(cors({
      origin: process.env.FRONTEND_URL ,
-     credentials: true
+     credentials: true,
 }))
 app.use(express.json())
 app.get('/',(request,response)=>{
@@ -21,7 +21,5 @@ app.get('/',(request,response)=>{
 // api endpoints
 app.use('/api',router)
      connectDB().then(()=>{
-         server.listen(PORT, ()=>{
-             console.log("server is runing at" + PORT)
-         })
+        console.log("server is runing at" + PORT)
      })
