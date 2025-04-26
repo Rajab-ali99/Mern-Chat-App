@@ -15,11 +15,11 @@ app.use(cors({
 app.use(express.json())
 app.get('/',(request,response)=>{
     response.json({
-        message: "server is runing at " + PORT
+        message: "server is runing "
     })
 })
 // api endpoints
-app.use('/api',router)
+app.use('/api/index',router)
      connectDB().then(()=>{
-        console.log("server is runing at" + PORT)
+        console.log("server is runing " )
      })
