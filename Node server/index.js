@@ -19,7 +19,8 @@ app.get('/',(request,response)=>{
     })
 })
 // api endpoints
-app.use('/api/index',router)
+app.use('/api',router)
      connectDB().then(()=>{
-        console.log("server is runing " )
+        console.log("Database is connected " )
      })
+module.exports = app;
