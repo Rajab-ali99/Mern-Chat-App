@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/user/userSlice';
 const Sidebar = () => {
   const user = useSelector(state => state.user)
+  
   const [editUserOpen, seteditUserOpen] = useState(false)
   const [openSearchUser, setOpenSearchUser] = useState(false)
   const [allUsers, setAllUsers] = useState([])
@@ -117,7 +118,7 @@ const Sidebar = () => {
           {
             allUsers.map((conv, index) => {
               return (
-                <div className='hover:bg-slate-100 cursor-pointer rounded mt-1'>
+                <div key={index} className='hover:bg-slate-100 cursor-pointer rounded mt-1'>
 
                   <NavLink to={'/' + conv?.userDetails?._id} key={conv?._id} className=''>
                     <div className='flex items-center p-2    gap-3'>

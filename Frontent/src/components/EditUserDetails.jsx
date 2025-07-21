@@ -11,15 +11,17 @@ import { setUser } from '../redux/user/userSlice'
 const EditUserDetails = ({ onClose, user }) => {
   const dispatch =useDispatch()
   const [data, setdata] = useState({
-    name: user?.user,
+    name: user?.name,
     profile_pic: user?.profile_pic,
   })
+  
   const UploadPhotoref =useRef()
    useEffect(() => {
     setdata((preve)=>{
         return{
           ...preve,
-          ...user
+          name: user.name || '',             
+      profile_pic: user.profile_pic || ''
         }
     })
   
@@ -114,6 +116,7 @@ const EditUserDetails = ({ onClose, user }) => {
                   type="file"
                   name='prfile_pic'
                   ref={UploadPhotoref}
+                  value=''
                   onChange={handleUploadPhoto}
                   />
                   </label>          

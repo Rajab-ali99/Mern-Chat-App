@@ -52,7 +52,7 @@ const Messages = () => {
 
       SocketConnection.emit('message-page', params.userId)
     }
-    SocketConnection.emit('seen', params.userId)
+    SocketConnection.emit('seen', params?.userId)
     SocketConnection.on('message-user', (data) => {
 
       setdataUser(data)
@@ -183,7 +183,7 @@ const Messages = () => {
             {
               allMessages.map((msg, index) => {
                 return (
-                  <div className={` flex flex-col rounded-md   w-fit max-w-[280px] lg:max-w-md ${user._id === msg.msgByUserId ? "ml-auto bg-teal-200" : "mr-auto bg-white"} `}>
+                  <div key={index} className={` flex flex-col rounded-md   w-fit max-w-[280px] lg:max-w-md ${user._id === msg.msgByUserId ? "ml-auto bg-teal-200" : "mr-auto bg-white"} `}>
 
                     {
                       msg?.ImageUrl && (

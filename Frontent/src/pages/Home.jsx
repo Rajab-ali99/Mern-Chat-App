@@ -13,12 +13,12 @@ import io from 'socket.io-client'
 
 const Home = () => {
   const user = useSelector(state => state.user)
-  
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
   const basepath = location.pathname === "/"
-  
+
   const fetchUserDetails = async () => {
     try {
       const url = `${import.meta.env.VITE_BACKEND_URL}/api/user-Details`
@@ -31,7 +31,7 @@ const Home = () => {
         dispatch(logout())
         navigate('/email')
       }
-      
+
     } catch (error) {
       console.log("error", error)
     }
@@ -44,13 +44,13 @@ const Home = () => {
   useEffect(() => {
     const socketConection = io(import.meta.env.VITE_BACKEND_URL, {
       withCredentials: true,
-      transports: ['websocket'],
+      transports: ['websocket', 'polling'],
       auth: {
         token: localStorage.getItem('token')
       }
     })
     socketConection.on('onlineUser', (data) => {
-      
+
       dispatch(setOnlineUser(data))
     })
     dispatch(setsocketConnection(socketConection))
@@ -71,12 +71,15 @@ const Home = () => {
         <section className={`${basepath && 'hidden'} w-full`}>
           <Outlet className='' />
         </section>
-        <div className={`${basepath ? 'flex gap-3 justify-center w-full items-center flex-col' : 'hidden'}`}>
-          <img src={logo} alt=""
-            width={220}
-          />
-          <p className='text-center pl-10 font-semibold text-slate-500'>Select user to start a chat</p>
-        </div>
+        
+
+          <div className={`${basepath ? 'lg:flex hidden gap-3 justify-center w-full items-center flex-col' : 'hidden'}`}>
+            < img src={logo} alt=""
+              width={220}
+            />
+            <p className='text-center pl-10 font-semibold text-slate-500'>Select user to start a chat</p>
+          </div>
+        
       </div>
 
     </>
