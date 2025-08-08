@@ -59,7 +59,7 @@ const Sidebar = () => {
     localStorage.clear()
   }
   return (
-    <div className='bg-white  grid grid-cols-[48px,1fr]  w-screen lg:w-[300px] h-[100vh] '>
+    <div className='bg-white  grid grid-cols-[48px,1fr]  w-screen lg:w-[300px] h-[100dvh] '>
       <div className='bg-slate-200 w-12  h-full py-3 rounded flex flex-col justify-between '>
         <div className='flex flex-col gap-3'>
 
