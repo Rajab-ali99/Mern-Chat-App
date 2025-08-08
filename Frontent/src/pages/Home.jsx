@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout, setUser, setOnlineUser, setsocketConnection } from '../redux/user/userSlice'
 import logo from '../assets/logo.png'
-import Sidebar from '../components/sidebar'
+import Sidebar from '../components/Sidebar'
 
 
 import io from 'socket.io-client'
