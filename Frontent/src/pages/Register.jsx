@@ -68,7 +68,7 @@ const Register = () => {
     }
   }
   return (
-    <div className='bg-white max-w-sm my-5 mx-auto p-5'>
+    <div className='bg-white max-w-sm my-5 mx-3 md:mx-auto p-5'>
       <div className='mb-4 text-center font-bold'>Welcome to chat App!</div>
       <form className='' onSubmit={handleSubmit}>
 
