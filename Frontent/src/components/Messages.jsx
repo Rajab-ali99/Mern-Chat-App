@@ -174,7 +174,7 @@ const Messages = () => {
             </button>
           </div>
         </header>
-        <section className='h-[calc(100vh-112px)] px-3 relative bg-contain bg-opacity-50 bg-slate-200  overflow-x-hidden overflow-y-scroll scrollbar'>
+        <section className='h-[calc(100dvh-112px)] px-3 relative bg-contain bg-opacity-50 bg-slate-200  overflow-x-hidden overflow-y-scroll scrollbar'>
           {/**Display all messages */}
           <div className='flex items-center justify-center p-14'>
             <p className='text-xs text-slate-500 py-1  px-3 rounded-md bg-orange-200'>Messages are end-to-end encrypted no one out of this chat can read them.</p>
