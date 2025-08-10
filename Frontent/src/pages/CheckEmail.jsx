@@ -44,7 +44,7 @@ const CheckEmail = () => {
     }
   }
   return (
-    <div className='bg-white max-w-sm my-5 mx-auto p-5'>
+    <div className='bg-white max-w-sm my-5 mx-3 md:mx-auto p-5'>
       <LuUserCircle2
       className=' w-fit m-auto mb-3'
       size={70}
