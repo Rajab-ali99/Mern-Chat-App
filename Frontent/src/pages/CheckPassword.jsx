@@ -67,7 +67,7 @@ const CheckPassword = () => {
     }
   }
   return (
-    <div className='bg-white max-w-sm my-5 mx-auto p-5'>
+    <div className='bg-white max-w-sm my-5 mx-3 md:mx-auto p-5'>
       <div className='flex items-center justify-center flex-col'>
       <Avatar 
       imageUrl={location?.state?.porfile_pic}
