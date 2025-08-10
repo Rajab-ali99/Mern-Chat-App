@@ -15,7 +15,7 @@ const SearchUserCard = ({ user,onClose}) => {
             name={user?.name}
             userId={user?._id}
           />
-        </div>
+        </div className=' w-[70%] '>
         <div>
           <div className='font-semibold  text-ellipsis  line-clamp-1'>{user?.name}</div>
           <p className='text-ellipsis line-clamp-1'>{user?.email}</p>
