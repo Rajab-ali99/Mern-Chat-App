@@ -105,7 +105,7 @@ const Sidebar = () => {
       <div className=' '>
         <h2 className='text-xl h-14 flex items-center ml-3 font-bold'>Message</h2>
         <div className='bg-slate-200 h-[1px]'></div>
-        <div className=' h-[calc(100vh-57px)] overflow-x-hidden overflow-y-auto scrollbar'>
+        <div className=' h-[calc(100dvh-57px)] overflow-x-hidden overflow-y-auto scrollbar'>
           {
             allUsers.length === 0 && (
 
