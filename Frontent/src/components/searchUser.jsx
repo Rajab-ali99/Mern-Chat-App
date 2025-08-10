@@ -40,7 +40,7 @@ const SearchUser = ({ onClose }) => {
                     />
                     <IoSearchOutline onClick={handleSearchUser} className='bg-white h-14 cursor-pointer text-3xl' />
                 </div>
-                <div className='bg-white h-[calc(100vh-150px)] overflow-y-scroll w-full p-4 rounded mt-2'>
+                <div className='bg-white h-[calc(100dvh-150px)] overflow-y-scroll w-full p-4 rounded mt-2'>
                     {/**no user found */}
                     {
                         searchUser.length === 0 && !loading && (
