@@ -6,6 +6,8 @@ import uploadFile from '../helpers/uploadFile';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 const Register = () => {
+  const [loading, setloading] = useState(false)
+  const [loading1, setloading1] = useState(false)
   const [data, setdata] = useState({
     name: "",
     email: "",
@@ -27,6 +29,7 @@ const Register = () => {
   }
   const handleUploadPhoto = async(e) => {
     const file = e.target.files[0]
+    setloading1(true)
     const uploadPhoto= await uploadFile(file)
     setuploadphoto(file)
     setdata((preve) => {
@@ -36,6 +39,7 @@ const Register = () => {
       }
 
     })
+    setloading1(false)
   }
   const handleClose = (e) => {
     e.stopPropagation()
@@ -43,6 +47,7 @@ const Register = () => {
     setuploadphoto(null)
   }
   const handleSubmit =async (e) => {
+    setloading(true)
      e.preventDefault()
      e.stopPropagation()
      const url=`${import.meta.env.VITE_BACKEND_URL}/api/register`
@@ -50,6 +55,7 @@ const Register = () => {
         const response=await axios.post(url,data)
         toast.success(response.data.message)
         if(response.data.success){
+          setloading(false)
           setdata({
             
               name: "",
@@ -142,8 +148,14 @@ const Register = () => {
         </div>
 
 
-        <button className='bg-primary text-white rounded w-full my-5  leading-relaxed tracking-wide py-1 font-bold hover:bg-secondary'>
-          Register
+        <button className='bg-primary text-white rounded w-full my-5 flex items-center justify-center  leading-relaxed tracking-wide py-1 font-bold hover:bg-secondary'>
+         {
+            loading?(<span className="loader "></span>):(
+              <span>Log In</span>
+              
+
+            )
+          }
         </button>
 
 
