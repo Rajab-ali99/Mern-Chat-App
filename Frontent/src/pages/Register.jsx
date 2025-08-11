@@ -128,7 +128,11 @@ const Register = () => {
           photo:
           <div className='bg-slate-200 flex justify-center'>
             <p className='bg-slate-200 p-3 max-w-[300px] rounded text-ellipsis line-clamp-1  cursor-pointer flex items-center justify-center'>
-              {uploadphoto?.name || "Upload profile pic"}
+              {
+                loading1 ? (
+                  <span className="loader"></span>
+                ):(<span>{uploadphoto?.name || "Upload profile pic"}</span>)
+              }
             </p>
               {uploadphoto?.name && (
                 <button onClick={handleClose} className='cursor-pointer hover:text-red-600'>
