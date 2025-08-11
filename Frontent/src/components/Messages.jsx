@@ -288,7 +288,7 @@ const Messages = () => {
               openImageVideo && (
 
 
-                <div className='absolute bottom-14  flex flex-col p-1 justify-center items-center w-36  m-2 bg-white rounded'>
+                <div className='absolute left-0 md:left-[300px] bottom-14  flex flex-col p-1 justify-center items-center w-36  m-2 bg-white rounded'>
                   <label htmlFor='UploadImage' className='flex items-center p-2  mx-1 w-full rounded  gap-4 hover:bg-slate-100 cursor-pointer'>
                     <button>
                       <FaImages className='text-primary' size={20} />
