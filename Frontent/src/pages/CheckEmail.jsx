@@ -7,6 +7,7 @@ import { LuUserCircle2 } from "react-icons/lu";
 import axios from 'axios';
 import toast from 'react-hot-toast';
 const CheckEmail = () => {
+  const [loading, setloading] = useState(false)
   const [data, setdata] = useState({
     email: "",
    
@@ -24,6 +25,7 @@ const CheckEmail = () => {
     })
   }
   const handleSubmit =async (e) => {
+    setloading(true)
      e.preventDefault()
      e.stopPropagation()
      const url=`${import.meta.env.VITE_BACKEND_URL}/api/email`
@@ -34,6 +36,7 @@ const CheckEmail = () => {
           setdata({
               email: "",           
           })
+          setloading(false)
           navigate('/password',{
             state: response?.data?.data
           })
@@ -68,9 +71,16 @@ const CheckEmail = () => {
         </div>
 
 
-        <button className='bg-primary text-white rounded w-full my-5  leading-relaxed tracking-wide py-1 font-bold hover:bg-secondary'>
-          Log In
-        </button>
+       <button className='bg-primary text-white flex items-center justify-center rounded w-full my-5  leading-relaxed tracking-wide py-1 font-bold hover:bg-secondary'>
+          {
+            loading?(<span className="loader "></span>):(
+              <span>Log In</span>
+              
+
+            )
+          }
+
+          </button>
 
 
       </form>
