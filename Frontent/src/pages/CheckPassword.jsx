@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import {setToken}from '../redux/user/userSlice'
 const CheckPassword = () => {
+  const [loading, setloading] = useState(false)
   const [data, setdata] = useState({
     password: "",
     userId : "",
@@ -38,6 +39,7 @@ const CheckPassword = () => {
     })
   }
   const handleSubmit =async (e) => {
+    setloading(true)
      e.preventDefault()
      e.stopPropagation()
      const url=`${import.meta.env.VITE_BACKEND_URL}/api/password`
@@ -58,6 +60,7 @@ const CheckPassword = () => {
           setdata({
               password: "",           
           })
+          setloading(false)
           navigate('/')
         }
        
@@ -98,8 +101,14 @@ const CheckPassword = () => {
         </div>
 
 
-        <button className='bg-primary text-white rounded w-full my-5  leading-relaxed tracking-wide py-1 font-bold hover:bg-secondary'>
-          Log In
+        <button className='bg-primary text-white rounded w-full my-5 flex justify-center items-center  leading-relaxed tracking-wide py-1 font-bold hover:bg-secondary'>
+         {
+            loading?(<span className="loader "></span>):(
+              <span>Log In</span>
+              
+
+            )
+          }
         </button>
 
 
