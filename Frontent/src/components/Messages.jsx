@@ -177,7 +177,7 @@ const Messages = () => {
         <section className='h-[calc(100dvh-56px)] px-3 relative bg-contain bg-opacity-50 bg-slate-200  overflow-x-hidden overflow-y-scroll scrollbar'>
           {/**Display all messages */}
           <div className='flex items-center justify-center p-14'>
-            <p className='text-xs text-slate-500 py-1  px-3 rounded-md bg-orange-200'>Messages are end-to-end encrypted no one out of this chat can read them.</p>
+            <p className='text-xs mt-5 text-slate-500 py-1  px-3 rounded-md bg-orange-200'>Messages are end-to-end encrypted no one out of this chat can read them.</p>
           </div>
           <div ref={CurrentMsg} className='flex flex-col p-2 gap-2'>
             {
