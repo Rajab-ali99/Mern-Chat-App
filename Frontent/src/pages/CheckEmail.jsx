@@ -43,6 +43,7 @@ const CheckEmail = () => {
         }
     } catch (error) {
       toast.error(error?.response?.data?.message)
+      setloading(false)
       console.log(error)
     }
   }
